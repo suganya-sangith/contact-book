@@ -1,0 +1,13 @@
+class ContactsController < ApplicationController
+def new
+	end
+	def create
+		@contact = Contact.new(params[:article])
+		@contact.save
+		redirect_to @book
+	end
+	private
+	def contact_params
+		params.require(:contact).permit(:firstname, :lastname ,:email_id, :mobile_number, :address)
+	end
+end

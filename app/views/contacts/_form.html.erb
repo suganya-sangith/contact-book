@@ -1,0 +1,29 @@
+<%= form_for :contact, url: contacts_path do |f| %>
+<p>
+<%= f.label :firstname %>
+ &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+ <%= f.text_field :firstname %>
+</p>
+<p>
+<%= f.label :lastname %> 
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<%= f.text_field :lastname %>
+</p>
+<p>
+<%= f.label :email_id %>
+ &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+ <%= f.text_field :email_id %>
+</p>
+<p>
+<%= f.label :mobile_number %>
+ &nbsp &nbsp &nbsp 
+ <%= f.text_field :mobile_number %>
+</p>
+<p>
+<%= f.label :address %>
+ &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+ <%= f.text_area :address %>
+ <p>
+ <%= f.submit %>
+ </p>
+ <% end %>
