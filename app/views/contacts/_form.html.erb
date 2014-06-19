@@ -24,6 +24,11 @@
  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
  <%= f.text_area :address %>
  <p>
+<p>
+<%= f.label :photo %>
+<%= f.file_field :photo %>
+</p>
+<p>
  <%= f.submit %>
  </p>
  <% end %>

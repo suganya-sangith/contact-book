@@ -3,8 +3,13 @@ class ContactsController < ApplicationController
 	end
 	def create
 		@contact = Contact.new(contact_params)
-		@contact.save
+		name=params[:contact][:photo].original_filename
+		if @contact.save
+			@contact.update(:photo => name )
 		redirect_to @contact
+	else
+		render 'new'
+	end
 	end
 	def show
 		@contact = Contact.find(params[:id])
@@ -22,6 +27,8 @@ class ContactsController < ApplicationController
 	end
 	def update
 		@contact = Contact.find(param[:id])
+		name=params[:contact][:photo].original_filename
+		@contact.update(:photo => name)
 		if @contact.update(contact_params)
 			flash.now[:success] = "successfully updated"
 			redirect_to @contact
@@ -30,7 +37,13 @@ class ContactsController < ApplicationController
 		end
 	end
 	private
+	def func
+		name=params[:contact][:photo].original_filename
+		directory= "public/data"
+		return path = File.join(directory,name)
+	end
 	def contact_params
-		params.require(:contact).permit(:firstname, :lastname, :email_id, :mobile_number, :address)
+		File.open(func,"wb") { |f| f.write(params[:contact][:photo].read) }
+		params.require(:contact).permit(:firstname, :lastname, :email_id, :mobile_number, :address, :img_url)
 	end
 end
