@@ -1,5 +1,7 @@
 Contactbook::Application.routes.draw do
 resources :contacts
+get "home" => "contacts#home"
+root :to => "contacts#home"
 
 
   # The priority is based upon order of creation: first created -> highest priority.
