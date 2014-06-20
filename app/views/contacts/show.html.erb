@@ -23,7 +23,7 @@
 </p>
 <p>
 <strong>Image:</strong>
-<img src="/data/<%=@contact.photo %>" width = "200" height ="200" />
+<img src="/data/<%= @contact.photo %>" width = "200" height ="200" />
 </p>
 <%= link_to 'Back', contacts_path %>
 <%= link_to 'Edit', edit_contact_path(@contact) %>
