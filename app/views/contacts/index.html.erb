@@ -1,4 +1,4 @@
-<h1>Listing all contacts</h1>
+<h1 align=center>Listing all contacts</h1>
 <table>
 <tr>
 <th>Firstname</th>
@@ -13,7 +13,7 @@
 <td><%= contact.email_id %></td>
 <td><%= contact.mobile_number %></td>
 <td><%= contact.address %></td>
-<td><img src="/data/<%= contact.photo %>" width = "100" height ="100" /></td>
+<td><img src="/data/<%= contact.photo %>" width = "50" height ="50" border="5" /></td>
 <td><%= link_to 'show', contact_path(contact) %>
 <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
 <td><%= link_to 'Destroy', contact_path(contact), method: :delete, data: {confirm: 'Are you sure you want to delete?'} %></td>
@@ -21,4 +21,6 @@
 <% end %>
 </table>
 <%= link_to 'New Contact', new_contact_path %>
+<script type='text/javascript'>(function () { var done = false; var script = document.createElement('script'); script.async = true; script.type = 'text/javascript'; script.src = 'https://widget.purechat.com/VisitorWidget/WidgetScript'; document.getElementsByTagName('HEAD').item(0).appendChild(script); script.onreadystatechange = script.onload = function (e) { if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) { var w = new PCWidget({ c: '30fd8eaf-4804-494e-a9fe-5a3595e9689b', f: true }); done = true; } }; })();</script>
+
 

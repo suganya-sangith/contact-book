@@ -1,34 +1,41 @@
 <%= form_for :contact, url: contacts_path do |f| %>
+<% if @contact.errors.any? %>
+<div id="error_explanation">
+<h2><%= pluralize(@contact.errors.count, "error") %>&nbspunable to save please check the errors:</h2>
+<ul>
+<% @contact.errors.full_messages.each do |msg| %>
+<li><%= msg %></li>
+<% end %>
+</ul>
+</div>
+<% end %>
 <p>
-<%= f.label :firstname %>
- &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<%= f.label :firstname %> 
  <%= f.text_field :firstname %>
 </p>
 <p>
-<%= f.label :lastname %> 
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<%= f.label :lastname %>  
 <%= f.text_field :lastname %>
 </p>
 <p>
-<%= f.label :email_id %>
- &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<%= f.label :email_id %> 
  <%= f.text_field :email_id %>
 </p>
 <p>
 <%= f.label :mobile_number %>
- &nbsp &nbsp &nbsp 
  <%= f.text_field :mobile_number %>
 </p>
 <p>
 <%= f.label :address %>
- &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
  <%= f.text_area :address %>
  <p>
 <p>
 <%= f.label :photo %>
 <%= f.file_field :photo %>
 </p>
-<p>
+<p align=center>
  <%= f.submit %>
  </p>
  <% end %>
+<script type='text/javascript'>(function () { var done = false; var script = document.createElement('script'); script.async = true; script.type = 'text/javascript'; script.src = 'https://widget.purechat.com/VisitorWidget/WidgetScript'; document.getElementsByTagName('HEAD').item(0).appendChild(script); script.onreadystatechange = script.onload = function (e) { if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) { var w = new PCWidget({ c: '30fd8eaf-4804-494e-a9fe-5a3595e9689b', f: true }); done = true; } }; })();</script>
+

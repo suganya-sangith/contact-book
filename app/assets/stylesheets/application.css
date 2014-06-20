@@ -1,8 +1,22 @@
 body
 {
-background-image: url("bk8.jpg");
+	color: black;
+background-image: url("grass.jpg");
 background-size: cover;
-}/*
+}
+a:hover
+{
+	background-color: red;
+}
+label
+{
+	width:35em;
+	float:left;
+	text-align:right;
+	margin-right: 1em;
+	display:block;
+}
+/*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
