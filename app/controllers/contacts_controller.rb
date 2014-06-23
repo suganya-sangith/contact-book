@@ -45,6 +45,6 @@ class ContactsController < ApplicationController
 	end
 	def contact_params
 		File.open(func,"wb") { |f| f.write(params[:contact][:photo].read) }
-		params.require(:contact).permit(:firstname, :lastname, :email_id, :mobile_number, :address, :img_url)
+		params.require(:contact).permit(:firstname, :lastname, :gender, :email_id, :mobile_number, :address, :img_url)
 	end
 end
