@@ -11,6 +11,14 @@ class ContactsController < ApplicationController
 	else
 		render 'new'
 	end
+end
+	def male
+		@contacts = Contact.where( gender: "male")
+		render 'index'
+	end
+	def female
+		@contacts = Contact.where( gender: "female")
+		render 'index'
 	end
 	def show
 		@contact = Contact.find(params[:id])

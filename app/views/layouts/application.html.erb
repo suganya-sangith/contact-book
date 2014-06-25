@@ -1,47 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-<div class="header">
-<h1 style="text-align:center" >
-Welcome to Contact Manager App.....
-</h1>
-</div>
-<div class="menu">
-<b>Menu</b>
-<br>
-<p align=center>
-To create new click here
-</p>
-<p align=center>
-<%= link_to 'New Contact', new_contact_path %>
-</p>
-<br>
-<p align=center>
-To view list of contacts
-</p>
-<p align=center>
-<%=link_to 'All contacts', contacts_path %>
-<br>
-<div class="pstn">
-<img src="/data/cnt.png" />
-</div>
-</div>
+
 
   <title>Contactbook</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <style>
-  link:hover
-{
-	background-color: red;
-}
-</style>
+  <div class="header">
+<h1 style="text-align:center;margin:0" >
+<img src="/data/cb5.png" width = "50" height ="50" /> Contacts Book
+</h1>
+<p>
+<%=link_to_unless_current 'Home', root_path , :style => "color:white;" %>
+<%=link_to_unless_current 'All', contacts_path ,:style => "color:white;"%>
+<%= link_to_unless_current 'Male', contacts_male_path ,:style => "color:white;"%>
+<%= link_to_unless_current 'Female', contacts_female_path,:style => "color:white;" %>
+</p>
+
+</div>
+ 
 </head>
 <body>
 
 <%= yield %>
 
 </body>
-
+<footer>
+<p> All text and design © 2014 Report Bee Edusys Pvt.Ltd.
+<a href="https://www.reportbee.com/">click here</a></p>
+</footer>
 </html>

@@ -1,0 +1,25 @@
+<h1 align=center>Listing all contacts</h1>
+<table>
+<tr>
+<th>Firstname</th>
+<th>Lastname</th>
+<th>Gender</th>
+<th>Email_id</th>
+<th>Mobile_Number</th>
+<th>Address</th>
+<% @contacts.each do |contact| %>
+<tr>
+<td><%= contact.firstname %></td>
+<td><%= contact.lastname %></td>
+<td><%= contact.gender %></td>
+<td><%= contact.email_id %></td>
+<td><%= contact.mobile_number %></td>
+<td><%= contact.address %></td>
+<td><img src="/data/<%= contact.photo %>" width = "50" height ="50" border="5" /></td>
+<td><%= link_to 'show', contact_path(contact) %>
+<td><%= link_to 'Edit', edit_contact_path(contact) %></td>
+<td><%= link_to 'Destroy', contact_path(contact), method: :delete, data: {confirm: 'Are you sure you want to delete?'} %></td>
+</tr>
+<% end %>
+</table>
+<%= link_to 'New Contact', new_contact_path %>

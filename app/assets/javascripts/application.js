@@ -1,3 +1,4 @@
+
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -14,3 +15,32 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+function validate()
+{
+	var firstname = document.getElementById("contact_firstname").value;
+	if (firstname == "")
+	{
+		alert("provide your firstname")
+		return false;
+	}
+	var lastname = document.getElementById("contact_lastname").value;
+	if (lastname == "")
+	{
+		alert("provide your lastname")
+		return false;
+	}
+	var email = document.getElementById("contact_email_id").value;
+	if (email == "")
+	{
+		alert("provide your email id")
+		return false;
+	}
+	
+	var gender = document.getElementById("contact_gender").value;
+	if (gender == "")
+	{
+		alert("provide your gender")
+		return false;
+	}
+	
+}

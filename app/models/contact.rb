@@ -1,4 +1,5 @@
 class Contact < ActiveRecord::Base
+	validates :firstname,presence: true
 	validates_uniqueness_of :firstname, :scope => :lastname
 	validates :email_id,presence: true
 	validates :mobile_number, numericality: {only_integer: true}

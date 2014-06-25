@@ -19,7 +19,7 @@
 </p>
 <p>
 <%= f.label :gender %>  
-<%= f.select :gender, options_for_select([["select here"], ["male"], ["female"]]) %>
+<%= f.select :gender, options_for_select([[""], ["male"], ["female"]]) %>
 </p>
 <p>
 <%= f.label :email_id %> 
@@ -38,7 +38,7 @@
 <%= f.file_field :photo %>
 </p>
 <p align=center>
- <%= f.submit %>
+ <%= f.submit :onclick => "return validate();"%>
  </p>
  <% end %>
 
