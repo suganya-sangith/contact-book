@@ -1,0 +1,53 @@
+
+<% @contacts.each do |contact| %>
+<div class="contact-container">
+<div class="contact-image">
+		<a href = "<%= contact_path(contact) %>">
+		<img src="/data/<%= contact.photo %>" width = "100" height ="110" align="left"/>
+		</a>
+		</div>
+		<h3>
+			<%= contact.firstname %>
+			<%= contact.lastname %>
+		</h3>
+<div class="contact-name">
+	Gender 
+</div>
+<div class="contact-value">
+	<%= contact.gender %>
+</div>
+<div class="contact-name">
+	Email
+</div>
+<div class="contact-value">
+	<%= contact.email_id %>
+</div>
+<div class="contact-name">
+	Phone
+</div>
+<div class="contact-value">
+	<%= contact.mobile_number %>
+</div>
+<div class="contact-name">
+	Address
+</div>
+<div class="contact-value">
+	<%= contact.address %>
+</div>
+
+
+
+<!--<%= link_to 'show', contact_path(contact) %>
+<%= link_to 'Edit', edit_contact_path(contact) %></td>
+<%= link_to 'Destroy', contact_path(contact), method: :delete, data: {confirm: 'Are you sure you want to delete?'} %></td>-->
+</div>
+
+<% end %>
+
+
+
+<!--<script type='text/javascript'>(function () { var done = false; var script = document.createElement('script'); script.async = true; script.type = 'text/javascript'; script.src = 'https://widget.purechat.com/VisitorWidget/WidgetScript'; document.getElementsByTagName('HEAD').item(0).appendChild(script); script.onreadystatechange = script.onload = function (e) { if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) { var w = new PCWidget({ c: '30fd8eaf-4804-494e-a9fe-5a3595e9689b', f: true }); done = true; } }; })();</script>
+=end
+-->
+
+

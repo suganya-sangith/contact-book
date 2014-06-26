@@ -1,33 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-
   <title>Contactbook</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <div class="header">
-<h1 style="text-align:center;margin:0" >
-<img src="/data/cb5.png" width = "50" height ="50" /> Contacts Book
-</h1>
-<p>
-<%=link_to_unless_current 'Home', root_path , :style => "color:white;" %>
-<%=link_to_unless_current 'All', contacts_path ,:style => "color:white;"%>
-<%= link_to_unless_current 'Male', contacts_male_path ,:style => "color:white;"%>
-<%= link_to_unless_current 'Female', contacts_female_path,:style => "color:white;" %>
-</p>
-
-</div>
- 
 </head>
 <body>
 
-<%= yield %>
+	<div class="header">
+		<div class="header-left">
+			<div class="icon">
+				<img src="/data/cb6.png" width = "50" height ="50" align="left"/>
+			</div>
+			<p>Contacts Book</p>
+		</div>
+		<div class="header-right">
+			<ul>
+				<li>
+					<%=link_to_unless_current 'Home', root_path %> 
+				</li>
+				<li>
+					<%=link_to_unless_current 'All', contacts_path %> 
+				</li>
+				<li>
+					<%= link_to_unless_current 'Male', contacts_male_path %> 
+				</li>
+				<li>
+					<%= link_to_unless_current 'Female', contacts_female_path %>
+				</li>
+			</ul>
+			<div class="clear"></div>
+		</div>
+	</div>
+
+	<%= yield %>
+
+	<footer>
+		<p> All text and design © 2014 Report Bee Edusys Pvt.Ltd.
+			<a href="https://www.reportbee.com/">click here</a>
+		</p>
+	</footer>
 
 </body>
-<footer>
-<p> All text and design © 2014 Report Bee Edusys Pvt.Ltd.
-<a href="https://www.reportbee.com/">click here</a></p>
-</footer>
 </html>

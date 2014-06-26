@@ -14,7 +14,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
 function validate()
 {
 	var firstname = document.getElementById("contact_firstname").value;

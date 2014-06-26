@@ -1,71 +1,158 @@
-body
-{
-	color: #007065;
-background-color: #dcdcdc;
-background-size: cover;
-margin: 0px;
+body {
+    color: #007065;
+    background-color: #dcdcdc;
+    background-size: cover;
+    margin: 0px;
+    font-family: Arial;
 }
-h1
-{
-	margin: 0px;
+h1 {
+    margin: 0px;
 }
-label
-{
-	width:35em;
-	float:left;
-	text-align:right;
-	margin-right: 1em;
-	display:block;
+label {
+    width:35em;
+    float:left;
+    text-align:right;
+    margin-right: 1em;
+    display:block;
 }
-.menu
-{
-	float: left;
-	height:768px;
-	width:200px;
+.aboutus {
+    float: left;
+    height:768px;
+    width:200px;
 }
-.pstn
-{
-position: absolute;
-left:0;
-bottom: 0;
+.book-icon {
+    position: absolute;
+    left:0;
+    bottom: 0;
 }
-.algn
-{
-	margin-left: 150px;
-	line-height: 150%;
-
+.contact-align {
+    margin-left: 150px;
+    line-height: 150%;
 }
-.imgalgn
-{
+.contact-image {
     margin-top: 12px;
-	margin-left: 0px;
-	float: left;
-} 
-div.header
-{
-	background-color: #007065;
-	width:100%;
-	height: 80px;
-	position: relative;
-	margin: 0px;
-	color: white;
-	padding-top: 8px;
+    margin-left: 0px;
+    float: left;
 }
-div.header p
-{
-	
-	text-align:right;
-	 margin:0px;
+div.header {
+    background-color: #007065;
+    width:100%;
+    height: 80px;
+    position: relative;
+    margin: 0px;
+    color: white;
+    padding-top: 8px;
 }
+div.header p {
 
-footer
-{
-	background-color: #007065;
-	 clear: both;
+    margin:20px;
+}
+footer {
+    background-color: #007065;
+    clear: both;
     text-align: center;
     color: white;
-	height: 50px;
+    height: 50px;
     bottom: 0px;
     width: 100%;
     padding-top: 8px;
+}
+h3
+{
+    text-decoration: underline;
+	margin: 0px;
+    font-size: 14px;
+    padding-left: 140px;
+    padding-top: 20px;
+}
+h2
+{
+	margin: 0px;
+	padding-left: 200px;
+	line-height: 70px;
+}
+div.header-left
+{
+    float:left;
+    text-align:left;
+    padding-left:200px;
+    margin:0;
+    width:400px;
+    font-size: 26px;
+    font-weight: bold;
+}
+div.header-right
+{
+
+    float:right;
+    margin-top: 30px;
+    font-weight: bold;
+    
+}
+h4
+{
+    margin: 0px;
+}
+.icon img
+{
+    padding-top: 15px;
+}
+
+
+.header-right li
+{
+    float: left;
+    margin-right: 20px;
+    list-style: none;
+}
+.header-right li a
+{
+    color: #fff;
+}
+.clear{
+    clear: left;
+}
+.contact-container
+{
+    width:70%;
+    margin: 0 auto;
+    height: 150px;
+    border-bottom: 1px solid black;
+}
+div.contact-name
+{
+    width:100px;
+    float:left;
+    padding-left: 40px;
+    padding-top: 8px;
+}
+div.contact-value
+{
+text-align: left;
+padding-top: 8px;
+}
+div.contact-image
+{
+    padding-top: 10px;
+}
+.bottom-link li 
+{
+   
+   list-style: none;
+   display:inline;
+}
+.bottom-link li a
+{
+    color: #007065;
+}
+div.show-container
+{
+    width:40%;
+    margin: 0 auto;
+    clear:right;
+}
+div.show-image
+{
+
+    float:right;
 }

@@ -7,18 +7,18 @@ class ContactsController < ApplicationController
 		name=params[:contact][:photo].original_filename
 		if @contact.save
 			@contact.update(:photo => name )
-		redirect_to @contact
-	else
-		render 'new'
+			redirect_to @contact
+		else
+			render 'new'
+		end
 	end
-end
 	def male
 		@contacts = Contact.where( gender: "male")
-		render 'index'
+		render 'male'
 	end
 	def female
 		@contacts = Contact.where( gender: "female")
-		render 'index'
+		render 'female'
 	end
 	def show
 		@contact = Contact.find(params[:id])
@@ -45,14 +45,17 @@ end
 			render 'edit'
 		end
 	end
-	private
 	def func
-		name=params[:contact][:photo].original_filename
-		directory= "public/data"
-		return path = File.join(directory,name)
+		if params[:contact] && params[:contact][:photo]
+			name=params[:contact][:photo].original_filename
+			directory= "public/data"
+			return path = File.join(directory,name) 
+		else
+			return nil
+		end
 	end
-	def contact_params
+    def contact_params
 		File.open(func,"wb") { |f| f.write(params[:contact][:photo].read) }
-		params.require(:contact).permit(:firstname, :lastname, :gender, :email_id, :mobile_number, :address, :img_url)
+		params.require(:contact).permit(:firstname, :lastname, :gender, :email_id, :mobile_number, :address)
 	end
 end

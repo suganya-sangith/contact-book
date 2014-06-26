@@ -1,3 +1,4 @@
+<div class="show-container">
 <p>
 <strong>Firstname:</strong>
 <%= @contact.firstname %>
@@ -29,6 +30,12 @@
 <strong>Image:</strong>
 <img src="/data/<%= @contact.photo %>" width = "200" height ="200" border="5"/>
 </p>
+<div class="bottom-link">
+<li>
 <%= link_to 'Back', contacts_path %>
+</li>
+<li>
 <%= link_to 'Edit', edit_contact_path(@contact) %>
-<marquee behavior="scroll" direction="left"><img src="/data/bee.gif"/></marquee>
+</li>
+</div>
+</div>
