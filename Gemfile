@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
-gem 'mysql2'
-
+gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'devise' 
+gem "mail", "2.5.4"                                                # Authentication
+gem 'mysql2' 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
 # Use sqlite3 as the database for Active Record

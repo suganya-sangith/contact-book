@@ -1,3 +1,4 @@
+
 class ContactsController < ApplicationController
     def new
     	@contact = Contact.new
@@ -5,12 +6,18 @@ class ContactsController < ApplicationController
 	def create
 		@contact = Contact.new(contact_params)
 		name=params[:contact][:photo].original_filename
-		if @contact.save
-			@contact.update(:photo => name )
-			redirect_to @contact
-		else
-			render 'new'
-		end
+		 respond_to do |format|
+    if @contact.save
+      ContactMailer.email_send(@contact).deliver
+      @contact.update(:photo => name )
+      format.html { redirect_to(@contact, :notice => 'User was successfully created.') }
+      format.xml  { render :xml => @contact, :status => :created, :location => @contact }
+    else
+      format.html { render :action => "new" }
+      format.xml  { render :xml => @contact.errors, :status => :unprocessable_entity }
+    end
+  end
+		
 	end
 	def male
 		@contacts = Contact.where( gender: "male")
@@ -56,6 +63,11 @@ class ContactsController < ApplicationController
 	end
     def contact_params
 		File.open(func,"wb") { |f| f.write(params[:contact][:photo].read) }
-		params.require(:contact).permit(:firstname, :lastname, :gender, :email_id, :mobile_number, :address)
+		params.require(:contact).permit(:firstname, :lastname, :gender, :email, :mobile_number, :address)
 	end
+	def auto_search
+		@contacts = Contact.where("firstname like ?", "#{params[:firstname]}%")
+		render json: @contacts.as_json
+	end
+
 end

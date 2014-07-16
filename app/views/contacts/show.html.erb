@@ -13,8 +13,8 @@
 <%= @contact.gender %>
 </p>
 <p>
-<strong>Email_id:</strong>
-<%= @contact.email_id %>
+<strong>Email:</strong>
+<%= @contact.email %>
 </p>
 
 <p>
@@ -37,5 +37,10 @@
 <li>
 <%= link_to 'Edit', edit_contact_path(@contact) %>
 </li>
+<li>
+<%= link_to 'Destroy', contact_path(@contact), method: :delete, data: {confirm: 'Are you sure you want to delete?'} %>
+</li>
 </div>
+
 </div>
+

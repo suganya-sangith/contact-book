@@ -1,4 +1,15 @@
+<div class="whole-container">
+<div id="auto-search">
+<form>
+<input type="text" name="search" onkeyup="autosearch(this.value)"/>
 
+<button type="button" value="search">search</button>
+<p>Suggestions:</p>
+</form>
+
+<div id="auto-complete">
+<br>
+</div>
 <% @contacts.each do |contact| %>
 <div class="contact-container">
 <div class="contact-image">
@@ -20,7 +31,7 @@
 	Email
 </div>
 <div class="contact-value">
-	<%= contact.email_id %>
+	<%= contact.email %>
 </div>
 <div class="contact-name">
 	Phone
@@ -36,13 +47,13 @@
 </div>
 
 
-
 <!--<%= link_to 'show', contact_path(contact) %>
 <%= link_to 'Edit', edit_contact_path(contact) %></td>
 <%= link_to 'Destroy', contact_path(contact), method: :delete, data: {confirm: 'Are you sure you want to delete?'} %></td>-->
 </div>
 
 <% end %>
+</div>
 
 
 

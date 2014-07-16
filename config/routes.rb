@@ -1,10 +1,13 @@
 Contactbook::Application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+  get 'conatcts/female/auto_search'
+  get 'contacts/auto_search'
 get 'contacts/male'
 get 'contacts/female'
 resources :contacts
 get "home" => "contacts#home"
 root :to => "contacts#home"
-
 
 
   # The priority is based upon order of creation: first created -> highest priority.
